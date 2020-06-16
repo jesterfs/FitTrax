@@ -12,7 +12,6 @@ function fetchRecommended() {
 }
 
 function fetchSpotify(searchUrl, options={}) {
-  // let token = splitToken();
   let bearer = 'Bearer ' + spotifyToken;
   return fetch(searchUrl ,  {
       ...options,
@@ -37,18 +36,12 @@ function getSpotifyToken() {
   return token[1];
 }
 
-// function splitToken(){
-//   let token = getSpotifyToken();
-//   let token2 = token.toString();
-//   let accessToken = token2.split('=', '&');
-//   return accessToken[1];
-//   console.log(accessToken[1]);
-// }
+
 
 function watchForm(){
   $('#js-form').submit(event => {
     event.preventDefault();
-    // console.log(splitToken());
+    
     fetchRecommended().then(
       r => {
         tracks = r.tracks;
@@ -59,15 +52,15 @@ function watchForm(){
             const artists = t.artists.map(a => a.name).join(',');
             return `<li>${artists} - ${t.name}</li>`
           }).join('\n')
-
+          
         )
       }
     )
+    $('#test').removeClass('startHidden');
     
     
-    // console.log(maxResults);
   });
-  // splitToken();
+ 
 }
 
 
