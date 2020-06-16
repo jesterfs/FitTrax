@@ -1,6 +1,7 @@
 let spotifyToken;
 let userId;
 let tracks;
+let date = new Date()
 
 
 
@@ -90,7 +91,7 @@ function onLoad() {
       {
         method: 'POST',
         body: JSON.stringify({
-          name: "Test playlist",
+          name: `New Playlist ${date}`,
           public: false
         })
       }).then(r => {
