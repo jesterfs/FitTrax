@@ -103,7 +103,7 @@ function onLoad() {
             method: 'POST'
           })
       }).then(
-        () => alert('ok!')
+        () => alert('Ready to feel the burn? Check Spotify for your new playlist!')
       )
   })
   
