@@ -40,9 +40,11 @@ function getSpotifyToken() {
 
 
 function watchForm(){
+  
   $('#js-form').submit(event => {
     event.preventDefault();
-    
+    $('#tracks').hide();
+
     fetchRecommended().then(
       r => {
         tracks = r.tracks;
@@ -55,9 +57,12 @@ function watchForm(){
           }).join('\n')
           
         )
+        $('#tracks').show('fade', 1000);
       }
     )
+    $('#playlist').removeClass('startHidden')
     $('#test').removeClass('startHidden');
+    $("#test").attr("disabled", false); 
     
     
   });
@@ -66,6 +71,8 @@ function watchForm(){
 
 
 function onLoad() {
+  let playlistName = $( "#js-form option:selected" ).text();
+  
   spotifyToken = getSpotifyToken();
   console.log(spotifyToken);
   if (spotifyToken) {
@@ -79,7 +86,7 @@ function onLoad() {
 
   } else {
     
-    $('#login').show();
+    $('#login').removeClass('startHidden');
   }
   watchForm();
 
@@ -91,7 +98,7 @@ function onLoad() {
       {
         method: 'POST',
         body: JSON.stringify({
-          name: `New Playlist ${date}`,
+          name: `${playlistName} Playlist ${date}`,
           public: false
         })
       }).then(r => {
@@ -105,6 +112,7 @@ function onLoad() {
       }).then(
         () => alert('Ready to feel the burn? Check Spotify for your new playlist!')
       )
+     $("#test").attr("disabled", true); 
   })
   
 }
