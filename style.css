@@ -35,17 +35,15 @@ main {
   background-color: #008CDA;
   color: white;
   width: 100%;
-  /* position: absolute ; */
   margin-top: auto;
 }
 
 .wrapper {
- min-height: 100vh ; /* will cover the 100% of viewport */
- overflow: hidden;
- display: flex;
- flex-direction: column;
- 
- padding-bottom: 0px; /* height of your footer */  
+  min-height: 100vh ; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; 
+  padding-bottom: 0px; /* height of your footer */  
 }
 
 /* repeating elements */
@@ -82,9 +80,9 @@ h3 {
 
 /* flex boxes */
 .group {
- display: flex;
- flex-direction: column;
- margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
 .item {
@@ -95,16 +93,16 @@ h3 {
 }
 
 .item-double {
- flex: 2;
+  flex: 2;
 
 } 
 
 /* header styles */
 .headerGroup {
- display: flex;
- flex-direction: row;
- margin-bottom: 15px;
- padding: 0;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  padding: 0;
 }
 
 @media all and (max-width: 900px){
@@ -129,8 +127,7 @@ img {
 
 .loginItem {
   flex: 1;
-  margin: 10px;
- 
+  margin: 10px; 
   text-align: center;
 }
 
@@ -155,23 +152,23 @@ img {
 
 @media all and (min-width: 900px){
   .headingItem {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: auto;
-  margin-bottom: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 }
 
 
 #submit , button {
   text-decoration: none;
-      background-color: #008CDA;
-      border-radius: 30px;
-      border-width: 0;
-      color: white;
-      font-weight: 400;
-      font-size: 12px;
-      text-transform: uppercase;
+  background-color: #008CDA;
+  border-radius: 30px;
+  border-width: 0;
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 #login {
@@ -192,18 +189,17 @@ img {
 }
 
 #loginLink {
-      text-decoration: none;
-      background-color: #ADDD43;
-      border-radius: 30px;
-      color: RGBA(231, 252, 255, 1);
-      font-weight: 400;
-      font-size: 12px;
-      text-transform: uppercase;
-      margin: 50px auto;
-      padding: 10px;
-      
-      width: 120px;
-      height: 50px;
+  text-decoration: none;
+  background-color: #ADDD43;
+  border-radius: 30px;
+  color: RGBA(231, 252, 255, 1);
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 50px auto;
+  padding: 10px;  
+  width: 120px;
+  height: 50px;
 }
 
 
