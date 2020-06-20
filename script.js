@@ -26,10 +26,7 @@ function fetchSpotify(searchUrl, options={}) {
     response => response.json()
   )
 }
-// sends the json to the display results function
-function displayResults(responseJson){
-  console.log(responseJson);
-}
+
 
 
 function getSpotifyToken() {
@@ -82,7 +79,7 @@ function onLoad() {
   
   // gets the access token
   spotifyToken = getSpotifyToken();
-  console.log(spotifyToken);
+  
   if (spotifyToken) {
     // if the spotify token exists, the main section is shown
     $('#main').removeClass('startHidden');
@@ -90,7 +87,7 @@ function onLoad() {
     // fetches the user id 
     fetchSpotify('https://api.spotify.com/v1/me').then(data => {
       userId = data.id;
-      console.log(userId, 'got user id');
+      
     });
     
 
