@@ -1,7 +1,7 @@
 let spotifyToken;
 let userId;
 let tracks;
-let date = new Date()
+
 
 
 
@@ -26,7 +26,8 @@ function fetchSpotify(searchUrl, options={}) {
     response => response.json()
   ).catch(e => {
     console.log(e)
-    alert("Something went wrong. Try again later.")
+    $('#error').removeClass('hiddenMessage')
+    $('#playlist').addClass('hiddenMessage')
     })
 }
 
@@ -46,6 +47,8 @@ function watchForm(){
   // waits for a submit and puts the fetch recommended function into action
   $('#js-form').submit(event => {
     event.preventDefault();
+    $('#error').addClass('hiddenMessage');
+    $('#playlist').removeClass('hiddenMessage');
     // hides the tracks so they can be brought in with a fade
     $('#tracks').hide();
 
@@ -69,7 +72,8 @@ function watchForm(){
     $('#playlist').removeClass('startHidden')
     $('#test').removeClass('startHidden');
     // re-enables the create playlist button, which is disabled once it is clicked for each playlist. (ie only matters if they have created a playlist and the want to create a new one with different songs)
-    $("#test").attr("disabled", false); 
+    $("#test").attr("disabled", false);
+    $('.success').remove(); 
     
     
   });
@@ -78,7 +82,7 @@ function watchForm(){
 
 
 function onLoad() {
-  let playlistName = $( "#js-form option:selected" ).text();
+  // let playlistName = $( "#js-form option:selected" ).text();
   
   // gets the access token
   spotifyToken = getSpotifyToken();
@@ -103,6 +107,8 @@ function onLoad() {
 // watches for the create playlist button
   $('#test').click(e => {
     e.preventDefault();
+    let playlistName = $( "#js-form option:selected" ).text();
+    let date = new Date();
     // creates an empty playlist on user's spotify
     fetchSpotify(`https://api.spotify.com/v1/users/${userId}/playlists`, 
       {
@@ -120,7 +126,7 @@ function onLoad() {
             method: 'POST'
           })
       }).then(
-        () => alert('Ready to feel the burn? Check Spotify for your new playlist!')
+        () => $('.goToSpotify').append('<p class="success"> Check Spotify for your new playlist!</p>')
       )
      $("#test").attr("disabled", true); 
   })
