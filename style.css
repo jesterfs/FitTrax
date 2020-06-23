@@ -16,7 +16,7 @@ body {
 }
 
 header{
-  background-color:#008CDA;
+  background-color:#005685;
   color: white;
   margin-bottom: 100px;
   padding: 0;
@@ -32,7 +32,7 @@ main {
 
 #footer {
   text-align: center;
-  background-color: #008CDA;
+  background-color: #005685;
   color: white;
   width: 100%;
   margin-top: auto;
@@ -49,7 +49,14 @@ main {
 /* repeating elements */
 
 ul {
-  list-style: circle;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  width: 100%
+}
+
+li {
+  line-height: 25px;
 }
 
 
@@ -72,7 +79,35 @@ h3 {
   display: inline-block;
 }
 
+@media all and (min-width: 600px){
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}
 
+.subtitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  margin-top: 0;
+  padding-left: 15px;
+  font-size: 15px;
+  display: inline-block;
+}
+
+@media all and (min-width: 600px){
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 20px;
+  }
+}
 
 .startHidden {
   display: none !important;
@@ -100,14 +135,14 @@ h3 {
 /* header styles */
 .headerGroup {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 15px;
   padding: 0;
 }
 
-@media all and (max-width: 900px){
+@media all and (min-width: 600px){
   .headerGroup {
-    flex-direction: column;
+    flex-direction: row;
   }
 }
 
@@ -131,6 +166,13 @@ img {
   text-align: center;
 }
 
+@media all and (min-width: 600px){
+  .loginItem {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+
 /* main styles */
 .heading {
   text-align: center;
@@ -144,11 +186,7 @@ img {
   
 }
 
-@media all and (max-width: 900px){
-  .headingItem {
-    width: 100%;
-  }
-}
+
 
 @media all and (min-width: 900px){
   .headingItem {
@@ -160,16 +198,40 @@ img {
 }
 
 
+#classType {
+  /* width: 20%; */
+  font-size: 15px;
+} 
+
+
+@media all and (min-width: 900px) {
+  #classType {
+  font-size: 20px;
+} 
+  label {
+    font-size: 20px;
+  }
+
+}
+
+
 #submit , button {
   text-decoration: none;
-  background-color: #008CDA;
+  background-color: #005685;
   border-radius: 30px;
   border-width: 0;
   color: white;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 15px;
   text-transform: uppercase;
 }
+
+media all and (min-width: 900px){
+  #submit {
+    font-size: 20px;
+  }
+}
+
 
 #login {
   text-align: center;
@@ -192,7 +254,7 @@ img {
   text-decoration: none;
   background-color: #ADDD43;
   border-radius: 30px;
-  color: RGBA(231, 252, 255, 1);
+  color: black;
   font-weight: 400;
   font-size: 12px;
   text-transform: uppercase;
@@ -213,12 +275,28 @@ img {
   margin: 0;
 }
 
+
+
 .buttonDiv {
   text-align: center;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .formDiv {
   text-align: center;
+}
+
+#playlist {
+ 
+  margin: 0 auto; 
+  
+}
+
+@media all and (min-width: 600px){
+  #playlist {
+    width: 30%;
+  }
 }
 
 .playlistTitle {
@@ -226,28 +304,30 @@ img {
   font-family: 'Rock Salt', cursive;
 }
 
+
+
 button {
-  width: 90%;
+  /* width: 90%; */
   text-align: center;
-  
+  margin: 0 auto;
+  display: block;
+  padding: 5px;
 }
 
 @media all and (min-width: 600px) {
-  .intro {
-  text-align: left;
-  } 
+  
   button {
     width: 100px;
   }
   .buttonDiv {
-    text-align: left;
-    padding-left: 70px;
+    
+    /* padding-left: 70px; */
   }
   .formDiv {
-    text-align: left;
+    
   }
   .playlistTitle {
-  text-align: left;
+ 
   margin-left: 40px;
 }
 }

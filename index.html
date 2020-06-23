@@ -12,18 +12,19 @@
     <header class='headerGroup'> 
       <div class='heading headingItem'>
         <h1>FitTrax</h1>
-        <h3>Playlist Generator</h3>
+        <h2 class='subtitle'>Playlist Generator</h2>
       </div>
       <div class='item-double' id='headerImg'>
-        <img src="images/fitness-class.jpg" alt="Women doing sit ups in a group fitness class." > 
+        <img src="images/fitness-class.jpg" alt="runners' feet before a race." > 
       </div>  
     </header>
     <div id="login" class="startHidden">
       <div class='loginItem'>
-        <h3> What's a workout without music? Whether you're a fitness instructor or just a gymrat, FitTrax can help you find the perfect soundtrack to get your sweat on. Connect your Spotify below so we can get started!</h3>
+        <h2> What's a workout without music?</h2> 
+        <p>Whether you're a fitness instructor or just a gymrat, FitTrax can help you find the perfect soundtrack to get your sweat on. Connect your Spotify below so we can get started!</p>
       </div> 
       <div class='loginItem'> 
-        <a id="loginLink" href="https://accounts.spotify.com/authorize?client_id=032926db2e394d7a8f565551cab0f78d&response_type=token&redirect_uri=https://FitnessApp-1--stewartjester.repl.co&scope=playlist-modify-private">Login with Spotify</a>
+        <a id="loginLink" href="https://accounts.spotify.com/authorize?client_id=032926db2e394d7a8f565551cab0f78d&response_type=token&redirect_uri=https://FitTrax--stewartjester.repl.co&scope=playlist-modify-private">Login with Spotify</a>
       </div>  
     </div>
   
@@ -31,7 +32,7 @@
       
       <div class='group'>
         <div class='item intro'> 
-          <h3 class='item introText'>Select the type of class you're running, and we'll help you generate a playlist!</h3>
+          <h2 class='subtitle item introText'>Select the type of class you're running, and we'll help you generate a playlist!</h2>
         </div>  
         <form class='item formDiv' id='js-form'>
           <label for='classType'> Class Type </label>
@@ -50,15 +51,18 @@
         <div class='item startHidden' id='playlist'>
           <div class='playlistTitle'>
             <h2>Your Playlist</h2>
-          </div>  
-          <ul  id="tracks">
+          </div> 
+          <div class='playlistDiv'> 
+            <ul  id="tracks">
 
-          </ul>
+            </ul>
+          </div>
+          <div class='item buttonDiv'>
+            <button type="button" id="test" class='startHidden'>Create Playlist!</button>
+          </div>
         </div>
 
-        <div class='item buttonDiv'>
-          <button type="button" id="test" class='startHidden'>Create Playlist!</button>
-        </div>
+        
 
       </div>
 

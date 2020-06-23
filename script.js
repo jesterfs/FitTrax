@@ -24,7 +24,10 @@ function fetchSpotify(searchUrl, options={}) {
     }
   ).then(
     response => response.json()
-  )
+  ).catch(e => {
+    console.log(e)
+    alert("Something went wrong. Try again later.")
+    })
 }
 
 
